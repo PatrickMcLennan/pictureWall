@@ -1,0 +1,52 @@
+//  https://flatuicolors.com/palette/defo
+
+@mixin box {
+    border-radius: 1%;
+    border: 1px solid white;
+    box-shadow: 0 1rem 7rem white;
+}
+
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+body {
+    padding: 2rem;
+    background-image: linear-gradient(to bottom right, lighten(#3498db, 10%), darken(#3498db, 5%));
+}
+.parent {
+    @include box;
+    background-image: linear-gradient(to bottom right, rgba((lighten(#2ecc71, 10%)), .5), rgba((darken(#2ecc71, 5%)), .5));
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: space-evenly;
+    transform-style: preserve-3d;
+    perspective: 100rem;
+    transform: rotateX(15deg);
+}
+.pic {
+    @include box;
+    height: 40vh;
+    min-width: 30rem;
+    flex: .25;
+    margin: 5rem;
+    transition: all .5s;
+    transition-timing-function: ease-in-out;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+}
