@@ -6,14 +6,14 @@ const googleCanadaKey = "https://newsapi.org/v2/top-headlines?country=canada&api
 
 
 
-// NASA 
-const getNasa = new Request(nasaKey);
-fetch(getNasa)
-    .then(function(response) {
-        let info;
-        info = response.json();
-        console.log(info);
-    });
+    // NASA 
+// const getNasa = new Request(nasaKey);
+// fetch(getNasa)
+//     .then(function(response) {
+//         let info;
+//         info = response.json();
+//         console.log(info);
+//     });
 
 // {
     //     "copyright": "John Entwistle",
@@ -32,9 +32,9 @@ fetch(getNasa)
     
     // CAT PICS
     
-    // GOOGLE CANADA
-    const getGoogle = new Request(googleCanadaKey);
-    fetch(getGoogle)
-        .then(function(response) {
-            console.log(response.json());
-        })
+// GOOGLE CANADA
+// const getGoogle = new Request(googleCanadaKey);
+// fetch(getGoogle)
+//     .then(function(response) {
+//         console.log(response.json());
+//     })
