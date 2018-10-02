@@ -1,5 +1,7 @@
 const nasaKey = "https://api.nasa.gov/planetary/apod?api_key=hnReIst50ddj32BBbcm5dkbpPT3XpyusdPwXYf17";
 const unsplashKey = "https://api.unsplash.com/photos/?client_id=48ccb7bdf03ecfcfa3702027cf44a1a82a54947daedc60147dbb4af9b7690980";
+const catKey = "b04b6cc1-241a-443e-821d-a71c6a83a89d";
+const catUserId = "ttfd3r"  // ??
 
 
         // NASA 
@@ -17,3 +19,6 @@ const unsplashKey = "https://api.unsplash.com/photos/?client_id=48ccb7bdf03ecfcf
 
         // UNSPLASH
 
+
+
+        // CAT PICS
