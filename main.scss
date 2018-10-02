@@ -26,10 +26,25 @@ body {
     justify-content: center;
     padding: 2rem;
     background-image: linear-gradient(to bottom right, lighten(#3498db, 10%), darken(#3498db, 5%));
+
+    &::-webkit-scrollbar {
+        width: 12px;
+        background: inherit;
+
+        &-track {
+            width: 12px;
+        }
+        &-thumb {
+            width: 1rem;
+            height: 1rem;
+            background: white;
+            border-radius: 25%;
+        }
+    }
+
 }
 .parent {
     @include box;
-    background-image: linear-gradient(to bottom right, rgba((lighten(#2ecc71, 10%)), .25), rgba((darken(#2ecc71, 5%)), .25));
     height: 100%;
     width: 100%;
     display: flex;
