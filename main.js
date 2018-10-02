@@ -1,7 +1,8 @@
+const nasaKey = "https://api.nasa.gov/planetary/apod?api_key=hnReIst50ddj32BBbcm5dkbpPT3XpyusdPwXYf17";
+const unsplashKey = "https://api.unsplash.com/photos/?client_id=48ccb7bdf03ecfcfa3702027cf44a1a82a54947daedc60147dbb4af9b7690980";
 
-// NASA 
 
-// API KEY = https://api.nasa.gov/planetary/apod?api_key=hnReIst50ddj32BBbcm5dkbpPT3XpyusdPwXYf17
+        // NASA 
 
 // {
 //     "copyright": "John Entwistle",
@@ -13,3 +14,6 @@
 //     "title": "Supernumerary Rainbows over New Jersey",
 //     "url": "https://apod.nasa.gov/apod/image/1810/SupernumeraryRainbows_Entwistle_960.jpg"
 // }
+
+        // UNSPLASH
+

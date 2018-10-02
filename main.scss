@@ -20,12 +20,16 @@ html {
     box-sizing: border-box;
 }
 body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 2rem;
     background-image: linear-gradient(to bottom right, lighten(#3498db, 10%), darken(#3498db, 5%));
 }
 .parent {
     @include box;
-    background-image: linear-gradient(to bottom right, rgba((lighten(#2ecc71, 10%)), .5), rgba((darken(#2ecc71, 5%)), .5));
+    background-image: linear-gradient(to bottom right, rgba((lighten(#2ecc71, 10%)), .25), rgba((darken(#2ecc71, 5%)), .25));
     height: 100%;
     width: 100%;
     display: flex;
@@ -42,7 +46,7 @@ body {
     height: 40vh;
     min-width: 30rem;
     flex: .25;
-    margin: 5rem;
+    margin: 2.5rem;
     transition: all .5s;
     transition-timing-function: ease-in-out;
 
