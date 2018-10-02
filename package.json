@@ -4,7 +4,8 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "watch:sass" : "node-sass main.scss style.css -w"
+    "watch:sass": "node-sass main.scss style.css -w",
+    "prefix:css" : "postcss --use autoprefixer -b 'last 10 versions' style.css -o style.css"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,8 @@
   },
   "homepage": "https://github.com/PatrickMcLennan/pictureWall#readme",
   "devDependencies": {
-    "node-sass": "^4.9.3"
+    "autoprefixer": "^9.1.5",
+    "node-sass": "^4.9.3",
+    "postcss-cli": "^6.0.0"
   }
 }
