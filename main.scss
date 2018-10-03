@@ -5,7 +5,23 @@
     border: 1px solid white;
     box-shadow: 0 1rem 7rem white;
 }
-
+@mixin latoHeader {
+    font-family: 'Lato';
+    font-weight: 100;
+    color: white;
+    font-size: 2rem;
+    font-weight: 100;
+    background: rgba(black, .5);
+}
+@mixin latoP {
+    font-family: 'Lato';
+    font-weight: 300;
+    font-size: 1rem;
+    letter-spacing: .15rem;
+    line-height: 120%;
+    background: rgba(black, .5);
+    color: white;
+}
 
 *,
 *::before,
@@ -13,20 +29,7 @@
     margin: 0;
     padding: 0;
     box-sizing: inherit;
-}
 
-html {
-    font-size: 62.5%;
-    box-sizing: border-box;
-}
-body {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
-    background-image: linear-gradient(to bottom right, lighten(#3498db, 10%), darken(#3498db, 5%));
-    
     &::-webkit-scrollbar {
         width: 10px;
         background: inherit;
@@ -40,6 +43,19 @@ body {
         }
     }
     
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background-image: linear-gradient(to bottom right, lighten(#3498db, 10%), darken(#3498db, 5%));
 }
 .parent {
     @include box;
@@ -56,6 +72,9 @@ body {
 }
 .pic {
     @include box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     height: 40vh;
     min-width: 30rem;
     flex: .25;
@@ -63,7 +82,10 @@ body {
     transition: all .5s;
     transition-timing-function: ease-in-out;
     cursor: pointer;
-    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
 
     & img {
         height: 100%;
@@ -72,14 +94,28 @@ body {
         z-index: -10;
         object-fit: cover;
     }
-    & h3 {
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 1;
+    &__header {
+        @include latoHeader;
+        padding: 1rem;
+        transform: translateY(-100%);
+        transition: all .3s;
+        max-height: 25vh;
+    }
+    &__description {
+        @include latoP;
+        padding: 1rem;
+        transform: translateY(100%);
+        transition: all .2s;
+        transition-delay: .2s;
     }
     &:hover {
         transform: scale(1.05);
         box-shadow: 0 2rem 10rem white;
+    }
+    &:hover .pic__header {
+        transform: translateY(0);
+    }
+    &:hover .pic__description {
+        transform: translateY(50%);
     }
 }

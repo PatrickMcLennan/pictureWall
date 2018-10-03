@@ -1,4 +1,3 @@
-const nasaKey = "https://api.nasa.gov/planetary/apod?api_key=hnReIst50ddj32BBbcm5dkbpPT3XpyusdPwXYf17";
 const unsplashKey = "https://api.unsplash.com/photos/?client_id=48ccb7bdf03ecfcfa3702027cf44a1a82a54947daedc60147dbb4af9b7690980";
 const catKey = "b04b6cc1-241a-443e-821d-a71c6a83a89d";
 const catUserId = "ttfd3r"  // ??
@@ -13,8 +12,11 @@ async function getJSON(apiKey) {
 }
 
 async function nasa() {
+    const nasaKey = "https://api.nasa.gov/planetary/apod?api_key=hnReIst50ddj32BBbcm5dkbpPT3XpyusdPwXYf17";
     const json = await getJSON(nasaKey);
-    console.log(json.date);
-
+    const nasa = document.querySelector('.nasa');
+    nasa.style.backgroundImage = `url(${json.url})`;
+    nasa.querySelector('.pic__header').innerText = json.title;
+    nasa.querySelector('.pic__description').innerText = json.explanation;
 }
 nasa();
