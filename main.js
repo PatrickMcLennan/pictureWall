@@ -5,21 +5,16 @@ const catUserId = "ttfd3r"  // ??
 const googleCanadaKey = "https://newsapi.org/v2/top-headlines?country=canada&apiKey=8baaf90261984e748f990e495360e903"
 
 
-function getNasa(apiKey) {
-    fetch(apiKey)
-        .then(response => {
-            if (response.status !== 200) {
-                console.log(`${apiKey} status is ${response.status} -- it's supposed to be 200`);
-                return;
-            };
-        response.json()
-            .then(data => {
-                const nasa = document.querySelector('.nasa');
-                console.log(data.hdurl);
-                nasa.innerHTML = 
-                `<img src="${data.hdurl}" alt="Nasa Picture of the Day"`;
-            });  
-    });
+
+async function getJSON(apiKey) {
+    const response = await fetch(apiKey);
+    const data = await response.json();
+    return data;
 }
 
-// getNasa(nasaKey);
+async function nasa() {
+    const json = await getJSON(nasaKey);
+    console.log(json.date);
+
+}
+nasa();
