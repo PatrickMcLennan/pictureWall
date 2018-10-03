@@ -63,6 +63,12 @@ body {
     transition: all .5s;
     transition-timing-function: ease-in-out;
     cursor: pointer;
+
+    & img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
     
     &:hover {
         transform: scale(1.05);
