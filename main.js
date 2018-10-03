@@ -22,13 +22,21 @@ async function unsplash() {
 }
 
 async function cat() {
-    const catKey = 'https://api.thecatapi.com/v1/images/search?'
-    const json = await getJSON(catKey);
+    const catKey = 'https://api.thecatapi.com/v1/images/search?';
+    const jsonArray = await getJSON(catKey);
+    const json = jsonArray[0];
     const cat = document.querySelector('.cat');
-    console.log(json[0]);
-    cat.style.backgroundImage = `url(${json[0].url})`;
+    cat.style.backgroundImage = `url(${json.url})`;
 }
 
-nasa();
-unsplash();
-cat();
+async function dog() {
+    const dogKey = 'https://api.thedogapi.com/v1/images/search?';
+    const jsonArray = await getJSON(dogKey);
+    const json = jsonArray[0];
+    const dog = document.querySelector('.dog');
+    dog.style.backgroundImage = `url(${json.url})`;
+}
+// nasa();
+// unsplash();
+// cat();
+// dog();
