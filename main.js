@@ -5,15 +5,36 @@ const catUserId = "ttfd3r"  // ??
 const googleCanadaKey = "https://newsapi.org/v2/top-headlines?country=canada&apiKey=8baaf90261984e748f990e495360e903"
 
 
-
     // NASA 
-// const getNasa = new Request(nasaKey);
-// fetch(getNasa)
-//     .then(function(response) {
-//         let info;
-//         info = response.json();
-//         console.log(info);
-//     });
+    // fetch(getNasa)
+    //     .then(response => {
+        //         const nasaInfo = response.json();
+        //         console.log(nasaInfo);
+        //     });
+
+function getJSON(apiKey) {
+    fetch(apiKey)
+        .then(response => {
+            
+        })
+}
+
+getJSON(nasaKey);
+getJSON(unsplashKey);
+getJSON(googleCanadaKey);
+        
+        
+// async function nasaRequest() {
+//     try {
+//         const getNasa = new Request(nasaKey);
+//         await getNasa;
+//         const nasaInfo = getNasa.json();
+//         return nasaInfo;
+//     } catch (error) {
+//         console.log('Something went wrong :(');
+//     }
+// }
+// nasaRequest();
 
 // {
     //     "copyright": "John Entwistle",

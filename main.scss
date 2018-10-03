@@ -26,22 +26,20 @@ body {
     justify-content: center;
     padding: 2rem;
     background-image: linear-gradient(to bottom right, lighten(#3498db, 10%), darken(#3498db, 5%));
-
+    
     &::-webkit-scrollbar {
-        width: 12px;
+        width: 10px;
         background: inherit;
-
+        
         &-track {
-            width: 12px;
+            width: 5px;
         }
         &-thumb {
-            width: 1rem;
-            height: 1rem;
             background: white;
             border-radius: 25%;
         }
     }
-
+    
 }
 .parent {
     @include box;
@@ -64,8 +62,10 @@ body {
     margin: 2.5rem;
     transition: all .5s;
     transition-timing-function: ease-in-out;
-
+    cursor: pointer;
+    
     &:hover {
         transform: scale(1.05);
+        box-shadow: 0 2rem 10rem white;
     }
 }
