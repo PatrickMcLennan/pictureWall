@@ -5,7 +5,7 @@ const catUserId = "ttfd3r"  // ??
 const googleCanadaKey = "https://newsapi.org/v2/top-headlines?country=canada&apiKey=8baaf90261984e748f990e495360e903"
 
 
-function getJSON(apiKey) {
+function getNasa(apiKey) {
     fetch(apiKey)
         .then(response => {
             if (response.status !== 200) {
@@ -14,10 +14,12 @@ function getJSON(apiKey) {
             };
         response.json()
             .then(data => {
-                return data;
+                const nasa = document.querySelector('.nasa');
+                console.log(data.hdurl);
+                nasa.innerHTML = 
+                `<img src="${data.hdurl}" alt="Nasa Picture of the Day"`;
             });  
     });
 }
-const nasaJSON = getJSON(nasaKey);
 
-console.log(nasaJSON);
+// getNasa(nasaKey);
