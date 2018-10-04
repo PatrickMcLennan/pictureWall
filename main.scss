@@ -55,7 +55,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    position: relative;
+    z-index: 1;
     height: 40vh;
     min-width: 30rem;
     flex: .25;
@@ -67,16 +67,16 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+
 
     &:after {
         content: '';
         position: absolute;
         z-index: -1;
-        top: 0;
-        left: 0;
         width: 100%;
         height: 100%;
-        box-shadow: 0 2rem 5rem white;
+        box-shadow: 0 21rem 1rem white;
         opacity: 0;
         transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
     }
@@ -105,7 +105,7 @@ body {
         opacity: 0;
 
         &::-webkit-scrollbar {
-            width: 10px;
+            width: 7.5px;
             background: inherit;
             
             &-track {
@@ -120,8 +120,9 @@ body {
     &:hover {
         transform: scale(1.05);
     }
-    &:hover .pic:after {
+    &:hover &:after {
         opacity: 1;
+        transform: scale(1.25);
     }
     &:hover .pic__header {
         transform: scaleY(1);
