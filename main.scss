@@ -7,14 +7,18 @@
 }
 @mixin latoHeader {
     text-align: center;
+    text-transform: uppercase;
     font-family: 'Lato';
     font-weight: 100;
+    letter-spacing: .3rem;
     color: white;
     font-size: 2rem;
     font-weight: 100;
     background: rgba(black, .5);
 }
 @mixin latoP {
+    font-style: italic;
+    text-align: center;
     font-family: 'Lato';
     font-weight: 300;
     font-size: 1.4rem;
@@ -82,21 +86,16 @@ body {
     margin: 2.5rem;
     transition: all .5s;
     transition-timing-function: ease-in-out;
+    transform-style: preserve-3d;
     cursor: pointer;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;
-
-    & img {
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        z-index: -10;
-        object-fit: cover;
-    }
+    
     &__header {
         @include latoHeader;
+        transform-style: preserve-3d;
         padding: 1rem;
         transform: translateY(-100%);
         transition: all .3s;
@@ -104,7 +103,8 @@ body {
     }
     &__description {
         @include latoP;
-        padding: 1rem;
+        transform-style: preserve-3d;
+        padding: 1rem 1.75rem 1.75rem 1.75rem;
         transform: scaleY(0);
         transition: all .2s;
         transition-delay: .2s;

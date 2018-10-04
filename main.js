@@ -36,7 +36,19 @@ async function dog() {
     const dog = document.querySelector('.dog');
     dog.style.backgroundImage = `url(${json.url})`;
 }
-// nasa();
-// unsplash();
-// cat();
-// dog();
+
+async function gfycat() {
+    const gfycatKey = 'https://api.gfycat.com/v1/reactions/populated?tagName=trending';
+    const jsonObj = await getJSON(gfycatKey);
+    const json = jsonObj.gfycats[0];
+    const gfycatDOM = document.querySelector('.gfycat');
+    console.log(json);
+    gfycatDOM.style.backgroundImage = `url(${json.gifUrl})`;
+    gfycatDOM.querySelector('.pic__description').innerText = `"${json.title}"`;
+}
+nasa();
+unsplash();
+cat();
+dog();
+
+gfycat();
