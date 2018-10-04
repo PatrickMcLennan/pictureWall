@@ -42,13 +42,24 @@ async function gfycat() {
     const jsonObj = await getJSON(gfycatKey);
     const json = jsonObj.gfycats[0];
     const gfycatDOM = document.querySelector('.gfycat');
-    console.log(json);
     gfycatDOM.style.backgroundImage = `url(${json.gifUrl})`;
     gfycatDOM.querySelector('.pic__description').innerText = `"${json.title}"`;
+}
+
+async function nyt() {
+    const nytKey = "https://api.nytimes.com/svc/topstories/v2/home.json?api-key=f998c2f8d35d49f3b989c46064c38e74";
+    const jsonObj = await getJSON(nytKey);
+    const jsonResults = jsonObj.results;
+    const json = jsonResults[Math.floor(Math.random() * jsonResults.length)];
+    const nytDOM = document.querySelector('.nyt');
+    nytDOM.style.backgroundImage = `url(${json.multimedia[2].url})`;
+    nytDOM.querySelector('.pic__description').innerText = `${json.abstract}`;
+    console.log(json);
+
 }
 nasa();
 unsplash();
 cat();
 dog();
-
 gfycat();
+nyt();
