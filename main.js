@@ -54,12 +54,11 @@ async function nyt() {
     const nytDOM = document.querySelector('.nyt');
     nytDOM.style.backgroundImage = `url(${json.multimedia[4].url})`;
     nytDOM.querySelector('.pic__description').innerText = `${json.abstract}`;
-    console.log(json);
 
 }
-// nasa();
-// unsplash();
-// cat();
-// dog();
-// gfycat();
-// nyt();
+nasa();
+unsplash();
+cat();
+dog();
+gfycat();
+nyt();

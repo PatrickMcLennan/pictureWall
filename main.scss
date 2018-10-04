@@ -33,20 +33,6 @@
     margin: 0;
     padding: 0;
     box-sizing: inherit;
-
-    &::-webkit-scrollbar {
-        width: 10px;
-        background: inherit;
-        
-        &-track {
-            width: 5px;
-        }
-        &-thumb {
-            background: white;
-            border-radius: 25%;
-        }
-    }
-    
 }
 
 html {
@@ -56,25 +42,14 @@ html {
 body {
     min-height: 100vh;
     display: flex;
+    flex-flow: row wrap;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
+    align-content: space-evenly;
     padding: 2rem;
     background-image: linear-gradient(to bottom right, lighten(#3498db, 10%), darken(#3498db, 5%));
 }
-.parent {
-    @include box;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-evenly;
-    align-items: center;
-    align-content: space-evenly;
-    transform-style: preserve-3d;
-    perspective: 100rem;
-    transform: rotateX(15deg);
 
-}
 .pic {
     @include box;
     display: flex;
@@ -92,9 +67,8 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    overflow: hidden;
 
-    &::after {
+    &:after {
         content: '';
         position: absolute;
         z-index: -1;
@@ -102,7 +76,7 @@ body {
         left: 0;
         width: 100%;
         height: 100%;
-        box-shadow: 0 2rem 2rem white;
+        box-shadow: 0 2rem 5rem white;
         opacity: 0;
         transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
     }
@@ -111,8 +85,11 @@ body {
         @include latoHeader;
         transform-style: preserve-3d;
         padding: 1rem;
-        transform: translateY(-100%);
+        transform: scaleY(0);
         transition: all .3s;
+        transition-delay: all .3s;
+        transform-origin: top;
+        opacity: 0;
         max-height: 25vh;
     }
     &__description {
@@ -125,6 +102,7 @@ body {
         transform-origin: bottom;
         max-height: 15rem;
         overflow-y: scroll;
+        opacity: 0;
 
         &::-webkit-scrollbar {
             width: 10px;
@@ -142,13 +120,15 @@ body {
     &:hover {
         transform: scale(1.05);
     }
-    &:hover ::after {
+    &:hover .pic:after {
         opacity: 1;
     }
     &:hover .pic__header {
-        transform: translateY(0);
+        transform: scaleY(1);
+        opacity: 1;
     }
     &:hover .pic__description {
         transform: scaleY(1);
+        opacity: 1;
     }
 }
