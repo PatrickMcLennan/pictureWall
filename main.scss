@@ -55,7 +55,6 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    z-index: 1;
     height: 40vh;
     min-width: 30rem;
     flex: .25;
@@ -71,7 +70,6 @@ body {
     
     &__header {
         @include latoHeader;
-        transform-style: preserve-3d;
         padding: 1rem;
         transform: scaleY(0);
         transition: all .3s;
@@ -82,7 +80,6 @@ body {
     }
     &__description {
         @include latoP;
-        transform-style: preserve-3d;
         padding: 1rem 1.75rem 1.75rem 1.75rem;
         transform: scaleY(0);
         transition: all .2s;
