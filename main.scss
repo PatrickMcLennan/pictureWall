@@ -1,5 +1,7 @@
 //  https://flatuicolors.com/palette/defo
 
+@import 'logo/nav';
+
 @mixin box {
     border-radius: 1%;
     border: 1px solid white;
@@ -67,7 +69,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-    
+
     &__header {
         @include latoHeader;
         padding: 1rem;
@@ -92,7 +94,7 @@ body {
         &::-webkit-scrollbar {
             width: 7.5px;
             background: inherit;
-            
+
             &-track {
                 width: 5px;
             }
